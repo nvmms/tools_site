@@ -16,10 +16,11 @@
 	<link rel="icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon" />
 	<link href="/static/style/bootstrap.min.css" rel="stylesheet" type="text/css" />
 	<link href="/static/style/tool.css" rel="stylesheet" type="text/css" />
-	<!--[if lt IE 9]><script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script><script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->{:$Think.config.web.header}</head>
+	<!--[if lt IE 9]><script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script><script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->{:$Think.config.web.header}
+</head>
 
 <body>
-    {include file="header" /}
+	{include file="header" /}
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12 col10main">
@@ -47,7 +48,8 @@
 						<div class="alert alert-success alert-dismissible" role="alert">
 							常用PC,移动浏览器User-Agent大全,提供PC浏览器user-agent，Android手机浏览器user-agent大全 </div>
 						<div class="alert alert-warning alert-dismissible" role="alert">
-							<strong>您的User-Agent</strong>：{$_SERVER.HTTP_USER_AGENT}</div>
+							<strong>您的User-Agent</strong>：{$_SERVER.HTTP_USER_AGENT}
+						</div>
 						<div class="panel panel-success" id="Clientid">
 							<ul class="list-group">
 								<li class="list-group-item list-group-item-info" style="width: 100%">PC端User-Agent</li>
@@ -298,9 +300,8 @@
 		<div class="accordion-group"> </div>
 	</div>
 	</div>
-	<script src="/static/script/jquery-1.11.3.min.js" type="text/javascript"></script>
-	<script src="/static/script/bootstrap.min.js" type="text/javascript"></script>
-	<script src="/static/script/tool.js" type="text/javascript"></script>{include file="nav" /}
+    {include file="script" /}
+	{include file="nav" /}
 	{include file="footer" /}
 </body>
 

@@ -288,9 +288,7 @@
             </div>
         </div>
     </div>
-    <script src="/static/script/jquery-1.11.3.min.js" type="text/javascript"></script>
-    <script src="/static/script/bootstrap.min.js" type="text/javascript"></script>
-    <script src="/static/script/tool.js" type="text/javascript"></script>
+  {include file="script" /}
     <script>$(document).ready(function () { $("a[id^='tsfh_']").click(function (e) { var ss = $(e.target).attr("id").split("_"); $("html, body").animate({ scrollTop: $("#" + ss[1]).offset().top }, { duration: 500, easing: "swing" }); return false; }); });</script>
     {include file="nav" /}
     {include file="link" /}

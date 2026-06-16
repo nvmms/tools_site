@@ -863,9 +863,7 @@
 		</div>
 	</div>
 	</div>
-	<script src="/static/script/jquery-1.11.3.min.js" type="text/javascript"></script>
-	<script src="/static/script/bootstrap.min.js" type="text/javascript"></script>
-	<script src="/static/script/tool.js" type="text/javascript"></script>
+    {include file="script" /}
 	<script
 		type="text/javascript">var Public = {}; Public.TableSearch = function (table, keyword) { if (keyword) { keyword = keyword.replace(/\s+/g, '') } if (!keyword) { $('tr', table).each(function () { $(this).show() }); return } var pattern = new RegExp(keyword), is_show = false, is_td = false, str = ''; $('tr', table).each(function () { is_show = false, is_td = false; $('td', this).each(function () { is_td = true; str = $(this).text().replace(/\s+/g, ''); if (pattern.test(str)) { is_show = true } }); if (is_td) { if (is_show) { $(this).show() } else { $(this).hide() } } }) }</script>
 	{include file="nav" /}
