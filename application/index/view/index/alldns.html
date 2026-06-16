@@ -15,18 +15,7 @@
       <div class="col-md-12 col10main">
         <div class="accordion" id="accordion2">
           <div class="accordion-group">
-            <ul class="nav nav-tabs hbflag">
-              <li role="presentation"><a href="/dns/">公共DNS</a></li>
-              <li role="presentation" class="active">
-                <a href="/alldns/">各地区公共DNS</a>
-              </li>
-              <li role="presentation"><a href="/dnsdx/">各地电信DNS</a></li>
-              <li role="presentation"><a href="/dnslt/">各地联通DNS</a></li>
-              <li role="presentation"><a href="/dnsyd/">各地移动DNS</a></li>
-              <li role="presentation"><a href="/dnstt/">各地铁通DNS</a></li>
-              <li role="presentation"><a href="/dnsedu/">教育网DNS</a></li>
-              <li role="presentation"><a href="/dnsusa/">美国DNS</a></li>
-            </ul>
+            {include file="tools_tabs_network" /}
             <div class="alert alert-success alert-dismissible" role="alert">
               各地DNS服务器大全：联通DNS服务器、电信DNS服务器、铁通DNS服务器、教育网DNS服务器、美国DNS服务器。<code>小贴士：Ctrl+F 快速查找地区</code>
             </div>

@@ -16,15 +16,7 @@
         <div class="accordion" id="accordion2">
           <div class="accordion-group">
             <!-- <div><a href="https://www.aliyun.com/minisite/goods?userCode=eaborev5" target="_blank" rel="nofollow"><img src="http://zxgj.16400.cn/static/images/ali.jpg"></a></div> -->
-            <ul class="nav nav-tabs hbflag">
-              <li role="presentation"><a href="/ip/">IP地址归属地查询</a></li>
-              <li role="presentation" class="active">
-                <a href="/websocket/">Websocket测试</a>
-              </li>
-              <li role="presentation">
-                <a href="/browserinfo/">获取浏览器信息</a>
-              </li>
-            </ul>
+            {include file="tools_tabs_network" /}
             <div class="alert alert-success alert-dismissible" role="alert">
               本工具主要是为了测试服务端websocket功能是否完善可用而开发，主要是通过html5
               的websocket去连接服务端的websocket,因此，无论你是内网还是外网都可使用!服务端只是实现了接受和发送，这里只是测试而已,Websocket在线模拟请求工具：支持内网和外网；Websocket测试连接格式为

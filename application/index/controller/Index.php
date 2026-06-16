@@ -277,6 +277,7 @@ class Index extends Controller
                 }
                 break;
         }
+        $data['current_tool'] = $act;
         return $this->fetch($act, $data);
     }
 

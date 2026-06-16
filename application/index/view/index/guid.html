@@ -25,14 +25,7 @@
             <div class="col-md-12 col10main">
                 <div class="accordion" id="accordion2">
                     <div class="accordion-group">
-                        <ul class="nav nav-tabs hbflag">
-                            <li role="presentation"><a href="/password/">密码生成器</a></li>
-                            <li role="presentation"><a href="/uuid/">UUID在线生成</a></li>
-                            <li role="presentation" class="active"><a href="/guid/">GUID在线生成</a></li>
-                            <li role="presentation"><a href="/htpasswd/">htpasswd生成</a></li>
-                            <li role="presentation"><a href="/barcode/">条形码生成器</a></li>
-                            <li role="presentation"><a href="/ip2long/">IP/数字地址转换</a></li>
-                        </ul>
+                        {include file="tools_tabs_encrypt" /}
                         <div class="panel">
                             <form id="form1" class="form-horizontal" method="post">
                                 <div class="form-group"><label class="col-sm-2 control-label">生成GUID的个数：</label>

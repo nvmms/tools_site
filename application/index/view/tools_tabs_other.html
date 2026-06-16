@@ -1,0 +1,36 @@
+<ul class="nav nav-tabs hbflag js-tool-tabs">
+  {foreach $Think.config.web.tools.other.items as $key=>$tool}
+  {if $key < 7}
+  <li role="presentation"{if $tool.path==$current_tool} class="active"{/if}>
+    <a href="/{$tool.path}/"{if isset($tool.style)} style="{$tool.style}"{/if}>{$tool.label}</a>
+  </li>
+  {/if}
+  {/foreach}
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true"
+      aria-expanded="false">更多工具<span class="caret"> </span></a>
+    <ul class="dropdown-menu">
+      {foreach $Think.config.web.tools.other.items as $key=>$tool}
+      {if $key >= 7}
+      <li role="presentation"{if $tool.path==$current_tool} class="active"{/if}>
+        <a href="/{$tool.path}/"{if isset($tool.style)} style="{$tool.style}"{/if}>{$tool.label}</a>
+      </li>
+      {/if}
+      {/foreach}
+    </ul>
+  </li>
+</ul>
+<script>
+  (function () {
+    var tabs = document.querySelectorAll('.js-tool-tabs');
+    for (var i = 0; i < tabs.length; i++) {
+      var activeChild = tabs[i].querySelector('.dropdown-menu li.active');
+      if (activeChild) {
+        var dropdown = activeChild.parentNode && activeChild.parentNode.parentNode;
+        if (dropdown && dropdown.className.indexOf('active') === -1) {
+          dropdown.className += ' active';
+        }
+      }
+    }
+  })();
+</script>

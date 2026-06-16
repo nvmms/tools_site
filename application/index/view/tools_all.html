@@ -1,0 +1,10 @@
+{foreach $Think.config.web.tools as $group}
+<ul class="list-inline list-inline-bg">
+  <h3><span>{$group.label}</span></h3>
+  {foreach $group.items as $tool}
+  <li>
+    <span></span><a href="/{$tool.path}/"{if isset($tool.style)} style="{$tool.style}"{/if}>{$tool.label}</a>
+  </li>
+  {/foreach}
+</ul>
+{/foreach}

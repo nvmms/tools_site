@@ -15,41 +15,7 @@
       <div class="col-md-12 col10main">
         <div class="accordion" id="accordion2">
           <div class="accordion-group">
-            <ul class="nav nav-tabs hbflag">
-              <li role="presentation">
-                <a href="/deencrypt/">对称加密/解密</a>
-              </li>
-              <li role="presentation" class="active">
-                <a href="/aesencrypt/">AES加密/解密</a>
-              </li>
-              <li role="presentation">
-                <a href="/desencrypt/">DES加密/解密</a>
-              </li>
-              <li role="presentation">
-                <a href="/rc4encrypt/">RC4加密/解密</a>
-              </li>
-              <li role="presentation">
-                <a href="/rabbitencrypt/">Rabbit加密/解密</a>
-              </li>
-              <li role="presentation">
-                <a href="/tripledes/">TripleDES加密/解密</a>
-              </li>
-              <li role="presentation">
-                <a href="/shaencrypt/">SHA/SHA256加密</a>
-              </li>
-              <li role="presentation" class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true"
-                  aria-expanded="false">更多工具<span class="caret"> </span></a>
-                <ul class="dropdown-menu">
-                  <li role="presentation">
-                    <a href="/allencrypt/">散列/哈希加密大全</a>
-                  </li>
-                  <li role="presentation">
-                    <a href="/morse/">摩尔斯电码加解密</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
+            {include file="tools_tabs_encrypt" /}
             <div class="panel">
               <form id="form1" class="form-horizontal" method="post">
                 <div class="form-group">
