@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="{:html_lang()}">
 
 <head>
     {include file="head" /}
     <meta name="viewport"
         content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>{$Think.config.web.dnsdx.title}</title>
+  <title>{:lang('seo.dnsdx.title')}</title>
     <meta name="applicable-device" content="pc,mobile" />
     <meta http-equiv="Cache-Control" content="no-transform" />
     <meta http-equiv="Cache-Control" content="no-siteapp" />
-    <meta name="keywords" content="{$Think.config.web.dnsdx.keywords}" />
-    <meta name="description" content="{$Think.config.web.dnsdx.description}" />
+    <meta name="keywords" content="{:lang('seo.dnsdx.keywords')}" />
+    <meta name="description" content="{:lang('seo.dnsdx.description')}" />
     <meta name="renderer" content="webkit" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <link rel="icon" href="/favicon.ico" mce_href="/favicon.ico" type="image/x-icon" />

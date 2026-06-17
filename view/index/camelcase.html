@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="{:html_lang()}">
 
 <head>
   {include file="head" /}
-  <title>{$Think.config.web.camelcase.title}</title>
-  <meta name="keywords" content="{$Think.config.web.camelcase.keywords}" />
-  <meta name="description" content="{$Think.config.web.camelcase.description}" />
+  <title>{:lang('seo.camelcase.title')}</title>
+  <meta name="keywords" content="{:lang('seo.camelcase.keywords')}" />
+  <meta name="description" content="{:lang('seo.camelcase.description')}" />
 </head>
 
 <body>

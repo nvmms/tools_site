@@ -744,6 +744,21 @@ footer.authenticated-footer .list-inline li {
     color: #b7b7b7;
 }
 
+@media (min-width: 768px) {
+    .navbar-brand {
+        padding-left: 10px;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    #top_menu>li>a,
+    .language-switcher>li>a {
+        padding-left: 8px;
+        padding-right: 8px;
+        white-space: nowrap;
+    }
+}
+
 .navbar-default .navbar-nav>li>a:focus,
 .navbar-default .navbar-nav>li>a:hover {
     color: #FFF;

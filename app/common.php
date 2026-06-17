@@ -1,6 +1,34 @@
 <?php
 
 // 应用公共文件
+if (!function_exists('lang')) {
+    function lang($name, array $vars = [], string $range = '')
+    {
+        return \think\facade\Lang::get((string) $name, $vars, $range);
+    }
+}
+
+if (!function_exists('current_lang')) {
+    function current_lang(): string
+    {
+        return \think\facade\Lang::getLangSet();
+    }
+}
+
+if (!function_exists('current_lang_label')) {
+    function current_lang_label(): string
+    {
+        return lang('language.' . current_lang());
+    }
+}
+
+if (!function_exists('html_lang')) {
+    function html_lang(): string
+    {
+        return current_lang() === 'en-us' ? 'en-US' : 'zh-CN';
+    }
+}
+
 function Fcurl($url, $ifpost = 0, $datafields = '', $cookiefile = '', $v = false)
 {
     $ip_long = array(

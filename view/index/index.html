@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="{:html_lang()}">
 
 <head>
   {include file="head" /}
-  <title>{$Think.config.web.index.title}</title>
+  <title>{:lang('seo.index.title')}</title>
   <link rel="canonical" href="{$Think.config.web.index.canonical}" />
-  <meta name="keywords" content="{$Think.config.web.index.keywords}" />
-  <meta name="description" content="{$Think.config.web.index.description}" />
+  <meta name="keywords" content="{:lang('seo.index.keywords')}" />
+  <meta name="description" content="{:lang('seo.index.description')}" />
   <!--[if lt IE 9]>
       <script src="http://apps.bdimg.com/libs/html5shiv/3.7/html5shiv.min.js"></script>
       <script src="http://apps.bdimg.com/libs/respond.js/1.4.2/respond.min.js"></script>

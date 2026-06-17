@@ -1,9 +1,9 @@
-{foreach $Think.config.web.tools as $group}
+{foreach $Think.config.web.tools as $groupKey=>$group}
 <ul class="list-inline list-inline-bg">
-  <h3><span>{$group.label}</span></h3>
+  <h3><span>{:lang('tools.' . $groupKey . '.label')}</span></h3>
   {foreach $group.items as $tool}
   <li>
-    <span></span><a href="/{$tool.path}/"{if isset($tool.style)} style="{$tool.style}"{/if}>{$tool.label}</a>
+    <span></span><a href="/{$tool.path}/"{if isset($tool.style)} style="{$tool.style}"{/if}>{:lang('tool.' . $tool['path'])}</a>
   </li>
   {/foreach}
 </ul>

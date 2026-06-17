@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="{:html_lang()}">
 
 <head>
   {include file="head" /}
-  <title>{$Think.config.web.checkkeyword.title}</title>
-  <meta name="keywords" content="{$Think.config.web.checkkeyword.keywords}" />
-  <meta name="description" content="{$Think.config.web.checkkeyword.description}" />
+  <title>{:lang('seo.checkkeyword.title')}</title>
+  <meta name="keywords" content="{:lang('seo.checkkeyword.keywords')}" />
+  <meta name="description" content="{:lang('seo.checkkeyword.description')}" />
 </head>
 
 <body>

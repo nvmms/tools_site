@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="{:html_lang()}">
 
 <head>
   {include file="head" /}
-  <title>{$Think.config.web.htmlescape.title}</title>
-  <meta name="keywords" content="{$Think.config.web.htmlescape.keywords}" />
-  <meta name="description" content="{$Think.config.web.htmlescape.description}" />
+  <title>{:lang('seo.htmlescape.title')}</title>
+  <meta name="keywords" content="{:lang('seo.htmlescape.keywords')}" />
+  <meta name="description" content="{:lang('seo.htmlescape.description')}" />
 </head>
 
 <body>

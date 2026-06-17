@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="zh-CN">
+<html lang="{:html_lang()}">
 
 <head>
   {include file="head" /}
-  <title>{$Think.config.web.htmlmarkdown.title}</title>
-  <meta name="keywords" content="{$Think.config.web.htmlmarkdown.keywords}" />
-  <meta name="description" content="{$Think.config.web.htmlmarkdown.description}" />
+  <title>{:lang('seo.htmlmarkdown.title')}</title>
+  <meta name="keywords" content="{:lang('seo.htmlmarkdown.keywords')}" />
+  <meta name="description" content="{:lang('seo.htmlmarkdown.description')}" />
 </head>
 
 <body>

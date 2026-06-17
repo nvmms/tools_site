@@ -2,18 +2,18 @@
   {foreach $Think.config.web.tools.reference.items as $key=>$tool}
   {if $key < 7}
   <li role="presentation"{if $tool.path==$current_tool} class="active"{/if}>
-    <a href="/{$tool.path}/"{if isset($tool.style)} style="{$tool.style}"{/if}>{$tool.label}</a>
+    <a href="/{$tool.path}/"{if isset($tool.style)} style="{$tool.style}"{/if}>{:lang('tool.' . $tool['path'])}</a>
   </li>
   {/if}
   {/foreach}
   <li role="presentation" class="dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" href="javascript:;" role="button" aria-haspopup="true"
-      aria-expanded="false">更多工具<span class="caret"> </span></a>
+      aria-expanded="false">{:lang('more_tools')}<span class="caret"> </span></a>
     <ul class="dropdown-menu">
       {foreach $Think.config.web.tools.reference.items as $key=>$tool}
       {if $key >= 7}
       <li role="presentation"{if $tool.path==$current_tool} class="active"{/if}>
-        <a href="/{$tool.path}/"{if isset($tool.style)} style="{$tool.style}"{/if}>{$tool.label}</a>
+        <a href="/{$tool.path}/"{if isset($tool.style)} style="{$tool.style}"{/if}>{:lang('tool.' . $tool['path'])}</a>
       </li>
       {/if}
       {/foreach}
