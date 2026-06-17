@@ -5,7 +5,7 @@
 
 return [
     // 默认语言
-    'default_lang'        => env('DEFAULT_LANG', 'zh-cn'),
+    'default_lang'        => env('DEFAULT_LANG', 'en-us'),
     // 自动侦测浏览器语言
     'auto_detect_browser' => true,
     // 允许的语言列表
