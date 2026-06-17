@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  {include file="head" /}
+  <title>{$Think.config.web.html2all.title}</title>
+  <meta name="keywords" content="{$Think.config.web.html2all.keywords}" />
+  <meta name="description" content="{$Think.config.web.html2all.description}" />
+</head>
+
+<body>
+  {include file="header" /}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col10main">
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <!-- <div><a href="https://www.aliyun.com/minisite/goods?userCode=eaborev5" target="_blank" rel="nofollow"><img src="http://zxgj.16400.cn/static/images/ali.jpg"></a></div> -->
+            {include file="tools_tabs_format" /}
+            <div class="panel">
+              <form id="form1" class="form-horizontal" method="post">
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <textarea class="form-control" id="content" name="content" rows="12"
+                      placeholder="请输入要转换的HTML代码"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12 text-center">
+                    <input class="btn btn-success" onclick="javascript: htmlCov('asp');" type="button"
+                      value="Html转ASP" /><input class="btn btn-success" onclick="javascript: htmlCov('vbnet');"
+                      type="button" value="Html转VB.NET" /><input class="btn btn-success"
+                      onclick="javascript: htmlCov('perl');" type="button" value="Html转Perl" /><input
+                      class="btn btn-success" onclick="javascript: htmlCov('sws');" type="button"
+                      value="Html转Sws" /><span id="copyallcode" class="btn btn-default"
+                      data-clipboard-target="#result">复制</span><input class="btn btn-default" onclick="Empty()"
+                      type="button" value="清空" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <pre><code id="result"></code></pre>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="alert alert alert-success alert-dismissible">
+            <h4>Html转程序代码工具</h4>
+            <p>
+              Html转程序代码工具为您提供在线Html转程序代码,Html转ASP,Html转PERL,Html转SWS,Html转VB.NET,能得到拼接好的程序代码等快速转换工具,实现Html在线转换成各种程序,脚本语言
+            </p>
+          </div>
+          <div class="accordion-group"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {include file="script" /}
+  <script src="/static/script/pcjs/html2js.js" type="text/javascript"></script>
+  <script src="/static/script/hightout.js"></script>
+    {include file="nav" /}
+  {include file="link" /}
+  {include file="footer" /}
+</body>
+
+</html>

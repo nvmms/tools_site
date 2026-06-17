@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  {include file="head" /}
+  <title>{$Think.config.web.autoformat.title}</title>
+  <meta name="keywords" content="{$Think.config.web.autoformat.keywords}" />
+  <meta name="description" content="{$Think.config.web.autoformat.description}" />
+</head>
+
+<body>
+  {include file="header" /}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col10main">
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <!-- <div><a href="https://www.aliyun.com/minisite/goods?userCode=eaborev5" target="_blank" rel="nofollow"><img src="http://zxgj.16400.cn/static/images/ali.jpg"></a></div> -->
+            {include file="tools_tabs_text" /}
+            <div class="panel">
+              <form id="form1" class="form-horizontal" method="post">
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <textarea onmouseover="this.focus()" id="srcText" name="srcText" class="form-control" rows="14"
+                      placeholder="请输入要排版的文本内容"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12 text-center">
+                    <input class="btn btn-default" onclick="formatjs()" value="清除HTML标签" type="button"
+                      name="body" /><input onclick="format3()" value="添加空行" type="button" name="body3"
+                      class="btn btn-default" /><input onclick="format4()" value="英文标点转中文标点" type="button" name="chang"
+                      class="btn btn-default" /><input onclick="format()" value="一键排版" type="button" name="body"
+                      class="btn btn-success" /><span id="copyallcode" class="btn btn-default"
+                      data-clipboard-target="#srcText">复制</span><input id="buttonj2f" title="简繁转换" onclick="j2f()"
+                      value="简->繁" type="button" name="jachang" class="btn btn-default" /><input onclick="CheckWords()"
+                      value="检查错别字" type="button" name="errword" class="btn btn-default" /><input onclick="chklen()"
+                      value="统计字数" type="button" name="len" class="btn btn-default" /><button type="button"
+                      class="btn btn-default" onclick="javascript: $('#srcText').val('').focus();">
+                      清空
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="alert alert alert-success alert-dismissible">
+            <h4>在线自动排版工具</h4>
+            <p>
+              在线自动排版工具为您提供一键排版,文章自动排版编辑器,在线自动排版工具,可用于小说,论文排版,自动排版,实现纯文本文章的在线排版服务,一键排版让杂乱的文字按指定排版格式显示,使文章更漂亮,更易读等。
+            </p>
+          </div>
+          <div class="accordion-group"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {include file="script" /}
+  <script>
+    setJS(["/static/script/pcjs/autoformat.js"]);
+  </script>
+  {include file="nav" /}
+  {include file="link" /}
+  {include file="footer" /}
+</body>
+
+</html>

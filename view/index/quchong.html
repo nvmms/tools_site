@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  {include file="head" /}
+  <title>{$Think.config.web.quchong.title}</title>
+  <meta name="keywords" content="{$Think.config.web.quchong.keywords}" />
+  <meta name="description" content="{$Think.config.web.quchong.description}" />
+</head>
+
+<body>
+  {include file="header" /}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col10main">
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <!-- <div><a href="https://www.aliyun.com/minisite/goods?userCode=eaborev5" target="_blank" rel="nofollow"><img src="http://zxgj.16400.cn/static/images/ali.jpg"></a></div> -->
+            {include file="tools_tabs_text" /}
+            <div class="panel">
+              <form id="mform" class="form-horizontal" method="post">
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <textarea onmouseover="this.focus()" id="content" name="content" class="form-control" rows="10"
+                      placeholder="请输入要去重的内容"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12 text-center">
+                    <input type="button" onclick="process()" value="去重处理" class="btn btn-success" /><span
+                      id="copyallcode" class="btn btn-default" data-clipboard-target="#result">复制</span><input
+                      type="button" onclick="ClearAll()" value="清空" class="btn btn-default" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <pre><code id="result"></code></pre>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="alert alert alert-success alert-dismissible">
+            <h4>在线去重工具</h4>
+            <p>
+              在线去重工具为您提在线去重工具,去重复行,将列表内容放入文本框内，每行一条，点击去重按钮，即可得到无重复数据的列表,可以实现文本txt去重复,js去重复,java数组去重复,.net数组去除重复项等。
+            </p>
+          </div>
+          <div class="accordion-group"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {include file="script" /}
+  <script src="/static/script/pcjs/quchong.js"></script>
+  <script src="/static/script/hightout.js"></script>
+    {include file="nav" /}
+  {include file="link" /}
+  {include file="footer" /}
+</body>
+
+</html>

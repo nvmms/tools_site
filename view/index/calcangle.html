@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  {include file="head" /}
+  <title>{$Think.config.web.calcangle.title}</title>
+  <meta name="keywords" content="{$Think.config.web.calcangle.keywords}" />
+  <meta name="description" content="{$Think.config.web.calcangle.description}" />
+</head>
+
+<body>
+  {include file="header" /}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col10main">
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <!-- <div><a href="https://www.aliyun.com/minisite/goods?userCode=eaborev5" target="_blank" rel="nofollow"><img src="http://zxgj.16400.cn/static/images/ali.jpg"></a></div> -->
+            {include file="tools_tabs_calculate" /}
+            <div class="panel">
+              <div class="form-inline" style="width: 98%; text-align: center">
+                <div class="form-group">
+                  <ul class="AngleCountCent" style="text-align: right">
+                    <li>
+                      <label>
+                        <span>圆周</span><span class="mathunit"> </span>
+                      </label>
+                      <input type="text" class="form-control AngleTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>度</span><span class="mathunit">（°）</span></label>
+                      <input type="text" class="form-control AngleTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>秒</span><span class="mathunit">（"）</span></label>
+                      <input type="text" class="form-control AngleTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>弧度</span><span class="mathunit">（rad）</span></label>
+                      <input type="text" class="form-control AngleTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>直角</span><span class="mathunit"> </span>
+                      </label>
+                      <input type="text" class="form-control AngleTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>分</span><span class="mathunit">（ ′）</span></label>
+                      <input type="text" class="form-control AngleTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>毫弧度</span><span class="mathunit">（mrad）</span></label>
+                      <input type="text" class="form-control AngleTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>百分度</span><span class="mathunit">（gon）</span></label>
+                      <input type="text" class="form-control AngleTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                  </ul>
+                  <hr />
+                  <input type="button" id="reset" class="btn btn-warning" value="全部重置" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-success alert-dismissible">
+      <h4>在线角度弧度换算器介绍</h4>
+      <p>角度换算,角度制就是运用60进制的例子。</p>
+      <p>
+        规定周角的360分之一为1度的角，用度作为单位来度量角的单位制叫做角度制。
+      </p>
+      <p>注意“度”是单位，而非“1度”，因为单位的定义是计量事物标准量的名称。</p>
+    </div>
+    <div class="accordion-group"></div>
+  </div>
+  {include file="script" /}
+  <script type="text/javascript">
+    var bs = [1, 360, 1296000, 6.2831855, 4, 21600, 6283.18548, 399.99996];
+    var num = 0;
+    $(".BtnHS").on("click", function () {
+      num = $(this).prev().val();
+      if (num != "" && !isNaN(num)) {
+        var tag = num / bs[$(".AngleCountCent li").index($(this).parent())];
+        $(".AngleCountCent li").each(function (ind) {
+          $(this)
+            .find(".AngleTxt")
+            .val(bs[ind] * tag);
+        });
+      }
+    });
+    $("#reset").on("click", function () {
+      $("input[type='text']").val("");
+    });
+  </script>
+  {include file="nav" /}
+  {include file="link" /}
+  {include file="footer" /}
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  {include file="head" /}
+  <title>{$Think.config.web.sql2java.title}</title>
+  <meta name="keywords" content="{$Think.config.web.sql2java.keywords}" />
+  <meta name="description" content="{$Think.config.web.sql2java.description}" />
+</head>
+
+<body>
+  {include file="header" /}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col10main">
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <!-- <div><a href="https://www.aliyun.com/minisite/goods?userCode=eaborev5" target="_blank" rel="nofollow"><img src="http://zxgj.16400.cn/static/images/ali.jpg"></a></div> -->
+            {include file="tools_tabs_json" /}
+            <div class="panel">
+              <form id="form1" class="form-horizontal" action="/md5/" method="post">
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <textarea class="form-control" id="content" name="content" rows="15"
+                      placeholder="输入要转换的SQL"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12 text-center">
+                    <button class="btn btn-success" type="button" id="htaccess" onclick="change()">
+                      SQL转Java实体类</button><button type="button" class="btn btn-default" onclick="demo()">
+                      示例</button><span id="copyallcode" class="btn btn-default"
+                      data-clipboard-target="#result">复制</span><button type="button" class="btn btn-default"
+                      onclick="ClearAll()">
+                      清空
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <pre><code id="result"></code></pre>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="alert alert alert-success alert-dismissible">
+            <h4>SQL转Java实体类工具介绍</h4>
+            <p>
+              为您提供将SQL转为java实体类,mysql数据转Java实体类,oracle转Java实体类,在线SQL生成Java实体类等。
+            </p>
+          </div>
+          <div class="accordion-group"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {include file="script" /}
+  <script src="/static/script/hightout.js"></script>
+  <script src="/static/script/pcjs/sql2java.js"></script>
+  <script type="text/javascript">
+    function demo() {
+      var demo_str =
+        "CREATE TABLE `tb_address` (\n    `address_id` int(10) NOT NULL AUTO_INCREMENT,\n    `uid` int(11) NOT NULL,\n    `address_addr` varchar(255) NOT NULL,\n    `address_contry_id` int(10) NOT NULL,\n    `address_postcode` varchar(32) NOT NULL,\n    `address_phone` varchar(32) NOT NULL,\n    `address_realname` varchar(32) NOT NULL,\n    `address_is_default` int(1) NOT NULL,\n    `province_code` int(10) unsigned NOT NULL,\n    `city_code` int(10) unsigned NOT NULL,\n    `province_name` varchar(30) NOT NULL,\n    `city_name` varchar(30) NOT NULL,\n )";
+      $("#content").val(demo_str);
+    }
+  </script>
+    {include file="nav" /}
+  {include file="link" /}
+  {include file="footer" /}
+</body>
+
+</html>

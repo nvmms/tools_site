@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  {include file="head" /}
+  <title>{$Think.config.web.calctime.title}</title>
+  <meta name="keywords" content="{$Think.config.web.calctime.keywords}" />
+  <meta name="description" content="{$Think.config.web.calctime.description}" />
+</head>
+
+<body>
+  {include file="header" /}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col10main">
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <!-- <div><a href="https://www.aliyun.com/minisite/goods?userCode=eaborev5" target="_blank" rel="nofollow"><img src="http://zxgj.16400.cn/static/images/ali.jpg"></a></div> -->
+            {include file="tools_tabs_calculate" /}
+            <div class="panel">
+              <div class="form-inline" style="width: 98%; text-align: center">
+                <div class="form-group">
+                  <ul class="TimeCountCent" style="text-align: right">
+                    <li>
+                      <label>
+                        <span>天</span><span class="mathunit">（d）</span></label>
+                      <input type="text" class="form-control TimeTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>时</span><span class="mathunit">（h）</span></label>
+                      <input type="text" class="form-control TimeTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>周</span><span class="mathunit">（week）</span></label>
+                      <input type="text" class="form-control TimeTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>分</span><span class="mathunit">（min）</span></label>
+                      <input type="text" class="form-control TimeTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>秒</span><span class="mathunit">（s）</span></label>
+                      <input type="text" class="form-control TimeTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>毫秒</span><span class="mathunit">（ms）</span></label>
+                      <input type="text" class="form-control TimeTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                    <li>
+                      <label>
+                        <span>年</span><span class="mathunit">（yr）</span></label>
+                      <input type="text" class="form-control TimeTxt" onkeyup="
+                            this.value = this.value.replace(/[^0-9.]/g, '')
+                          " onafterpaste="this.value=this.value.replace(/[^0-9.]/g,'')" placeholder="请输入数字" /><a
+                        type="button" class="btn btn-default BtnHS">换算</a>
+                    </li>
+                  </ul>
+                  <hr />
+                  <input type="button" id="reset" class="btn btn-warning" value="全部重置" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="alert alert-success alert-dismissible">
+      <h4>在线时间换算器介绍</h4>
+      <p>1，年、周、天、时分秒、毫秒相互之间的时间单位转换</p>
+      <p>
+        2，一天有多少小时,一天有多少分钟,一年有多少分钟,一年有多少周,时间单位在线转换工具
+      </p>
+    </div>
+    <div class="accordion-group"></div>
+  </div>
+  {include file="script" /}
+  <script type="text/javascript">
+    var bs = [1, 24, 0.1428571, 1440.0000288, 86400, 86400000, 0.0027397];
+    var num = 0;
+    $(".BtnHS").on("click", function () {
+      num = $(this).prev().val();
+      if (num != "" && !isNaN(num)) {
+        var tag = num / bs[$(".TimeCountCent li").index($(this).parent())];
+        $(".TimeCountCent li").each(function (ind) {
+          $(this)
+            .find(".TimeTxt")
+            .val(bs[ind] * tag);
+        });
+      }
+    });
+    $("#reset").on("click", function () {
+      $("input[type='text']").val("");
+    });
+  </script>
+  {include file="nav" /}
+  {include file="link" /}
+  {include file="footer" /}
+</body>
+
+</html>

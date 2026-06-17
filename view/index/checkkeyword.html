@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  {include file="head" /}
+  <title>{$Think.config.web.checkkeyword.title}</title>
+  <meta name="keywords" content="{$Think.config.web.checkkeyword.keywords}" />
+  <meta name="description" content="{$Think.config.web.checkkeyword.description}" />
+</head>
+
+<body>
+  {include file="header" /}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            {include file="tools_tabs_webmaster" /}
+            <div class="panel">
+              <form id="form1help" class="form-horizontal" method="post">
+                <div class="form-group">
+                  <div class="col-sm-6">
+                    <input class="form-control" id="txt_url" name="txt_url" type="text" value="{$url}"
+                      placeholder="输入要检测的网址，如：http://{$_SERVER.HTTP_HOST}" />
+                  </div>
+
+                  <div class="col-sm-3">
+                    <input class="form-control" id="txt_url" name="txt_keyword" type="text" value="{$keyword}"
+                      placeholder="输入关键词" />
+                  </div>
+
+                  <div class="col-sm-3">
+                    <button type="submit" id="chameta" class="btn btn-success"
+                      onclick="$('#chameta').text('正在检测，请稍候……')">
+                      查询关键词密度
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <div id="metachecktb">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th class="titcolor" colspan="2">
+                        网址 {$url} 检测结果
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td width="25%">页面文本总长度</td>
+
+                      <td>
+                        <font color="red">{$html_strlen|default='-'}</font>
+                        个字符
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>关键字符串长度</td>
+
+                      <td>
+                        <font color="red">{$html_gjccd|default='-'}</font>
+                        个字符
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>关键字出现频率</td>
+
+                      <td>
+                        <font color="red">{$html_gjcsl|default='0'}</font> 次
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>关键字符总长度</td>
+
+                      <td>
+                        <font color="red">{$html_gjczcd|default='0'}</font>
+                        个字符
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>密度结果计算</td>
+
+                      <td>
+                        <font color="red">{$html_mdjgjs|default='-'}</font> %
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>密度建议值</td>
+
+                      <td>
+                        <font color="red">2%≦密度≦8%</font>
+                      </td>
+                    </tr>
+
+                    <tr>
+                      <td>密度检测结果建议</td>
+
+                      <td>
+                        {if isset($html_mdjgjs)} {if $html_mdjgjs>8}
+                        <font color="red">关键词密度&gt;2%，密度偏高</font>
+                        {elseif $html_mdjgjs<2} <font color="red">关键词密度&lt;2%，密度偏小</font>
+                          {else}
+                          <img src="/static/images/ok.png" />
+                          <font color="green">关键词密度在合理范围内</font>
+                          {/if} {else} - {/if}
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="alert alert alert-success alert-dismissible">
+            <h4>网页关键词密度检测工具</h4>
+            <p>
+              为您提供在线关键词密度检测查询,检测关键词的密度百分比，可以快速检测页面关键词出现的数量和密度，更适合蜘蛛的搜索。
+            </p>
+          </div>
+          <div class="accordion-group"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {include file="script" /}
+  {include file="nav" /} {include file="footer" /}
+</body>
+
+</html>

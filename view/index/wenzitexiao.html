@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  {include file="head" /}
+  <title>{$Think.config.web.wenzitexiao.title}</title>
+  <meta name="keywords" content="{$Think.config.web.wenzitexiao.keywords}" />
+  <meta name="description" content="{$Think.config.web.wenzitexiao.description}" />
+</head>
+
+<body>
+  {include file="header" /}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col10main">
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <!-- <div><a href="https://www.aliyun.com/minisite/goods?userCode=eaborev5" target="_blank" rel="nofollow"><img src="http://zxgj.16400.cn/static/images/ali.jpg"></a></div> -->
+            {include file="tools_tabs_text" /}
+            <div class="panel">
+              <form id="mform" class="form-horizontal" method="post">
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <textarea onmouseover="this.focus()" id="content" name="content" class="form-control" rows="10"
+                      placeholder="请输入要制作特效的汉字"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12 text-center">
+                    <select class="btn btn-default" name="randomiseby">
+                      <option value="">区分字母</option>
+                      <option value=" ">区分单词</option>
+                    </select>
+                    <input type="button" onclick="
+                          randomise();
+                          return false;
+                        " value="生成特效" class="btn btn-success" /><span id="copyallcode" class="btn btn-default"
+                      data-clipboard-target="#result">复制代码</span><input type="button" onclick="Empty()" value="清空"
+                      class="btn btn-default" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <div class="alert alert-warning alert-dismissible text-center" id="Div1" role="alert">
+                      <span id="color_text"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <pre><code id="result"></code></pre>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="alert alert alert-success alert-dismissible">
+            <h4 style="color: #66be8c; margin-bottom: 20px">文字特效工具</h4>
+            <p>
+              一键制作生成彩色特效文字,彩色的漂亮字体,可用于制作彩色文字生成,文字生成器,特效文字生成,文字特效制作,彩色文字特效,以及制作炫酷彩色Html代码特效,将工具生成的特效文字对应的HTML代码，粘贴到网页即可显示文字特效效果。
+            </p>
+          </div>
+          <div class="accordion-group"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {include file="script" /}
+  <script src="/static/script/pcjs/wenzitexiao.js"></script>
+  <script src="/static/script/hightout.js"></script>
+    {include file="nav" /}
+  {include file="link" /}
+  {include file="footer" /}
+</body>
+
+</html>

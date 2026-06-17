@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  {include file="head" /}
+  <title>{$Think.config.web.json2get.title}</title>
+  <meta name="keywords" content="{$Think.config.web.json2get.keywords}" />
+  <meta name="description" content="{$Think.config.web.json2get.description}" />
+</head>
+
+<body>
+  {include file="header" /}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col10main">
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <!-- <div><a href="https://www.aliyun.com/minisite/goods?userCode=eaborev5" target="_blank" rel="nofollow"><img src="http://zxgj.16400.cn/static/images/ali.jpg"></a></div> -->
+            {include file="tools_tabs_json" /}
+            <div class="panel">
+              <form id="form1" class="form-horizontal" method="post">
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <textarea class="form-control" onmouseover="this.focus()" id="content" name="content" rows="10"
+                      placeholder="请输入需转换的内容"></textarea>
+                  </div>
+                </div>
+                <div class="form-group navi">
+                  <div class="col-sm-12 text-center">
+                    <button type="button" class="btn btn-success" onclick="Json2Get(1)">
+                      JSON转GET参数</button><button type="button" class="btn btn-success" onclick="Json2Get(2)">
+                      GET参数转JSON</button><span id="copyallcode" class="btn btn-default"
+                      data-clipboard-target="#result">复制结果</span><input type="button" onclick="ClearAll()" value="清空"
+                      class="btn btn-default" />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <pre><code id="result"></code></pre>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="alert alert alert-success alert-dismissible" role="alert">
+            <h4>Json与GET参数转换工具</h4>
+            <p>1、支持GET请求参数转为JSON格式字符串</p>
+            <p>2、JSON字符串转GET请求,自动拼接网址Url参数</p>
+          </div>
+          <div class="accordion-group"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {include file="script" /}
+  <script src="/static/script/hightout.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    function Json2Get(type) {
+      var cont = $("#content").val();
+      if (type == 1) {
+        cont = cont.replace(/\t/g, "");
+        cont = cont
+          .replace(/\"/g, "")
+          .replace("{", "")
+          .replace("}", "")
+          .replace(",", "&")
+          .replace(":", "=");
+        cont = cont
+          .replace(/\"/g, "")
+          .replace(/{/g, "")
+          .replace(/}/g, "")
+          .replace(/,/g, "&")
+          .replace(/:/g, "=");
+      } else {
+        cont = cont
+          .replace(/&/g, '","')
+          .replace(/;/g, '","')
+          .replace(/=/g, '":"');
+        cont = '{"' + cont + '"}';
+      }
+      hightout(cont);
+    }
+  </script>
+    {include file="nav" /}
+  {include file="link" /}
+  {include file="footer" /}
+</body>
+
+</html>

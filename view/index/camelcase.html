@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="zh-CN">
+
+<head>
+  {include file="head" /}
+  <title>{$Think.config.web.camelcase.title}</title>
+  <meta name="keywords" content="{$Think.config.web.camelcase.keywords}" />
+  <meta name="description" content="{$Think.config.web.camelcase.description}" />
+</head>
+
+<body>
+  {include file="header" /}
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col10main">
+        <div class="accordion" id="accordion2">
+          <div class="accordion-group">
+            <!-- <div><a href="https://www.aliyun.com/minisite/goods?userCode=eaborev5" target="_blank" rel="nofollow"><img src="http://zxgj.16400.cn/static/images/ali.jpg"></a></div> -->
+            {include file="tools_tabs_text" /}
+            <div class="panel">
+              <form id="form1" class="form-horizontal" action="/md5/" method="post">
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <textarea class="form-control" id="content" name="content" rows="10"
+                      placeholder="输入要转换的内容"></textarea>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12 text-center">
+                    <button class="btn btn-success" type="button" id="htaccess"
+                      onclick="pcjson_convert('camelcase', 2)">
+                      下划线转驼峰
+                    </button>
+                    <button class="btn btn-success" type="button" id="htaccess"
+                      onclick="pcjson_convert('camelcase', 1)">
+                      驼峰转下划线</button><button type="button" class="btn btn-default" onclick="demo()">
+                      示例</button><span id="copyallcode" class="btn btn-default"
+                      data-clipboard-target="#result">复制</span><button type="button" class="btn btn-default"
+                      onclick="ClearAll()">
+                      清空
+                    </button>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <pre><code id="result"></code></pre>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="alert alert alert-success alert-dismissible">
+            <h4>驼峰与下划线互转工具</h4>
+            <p>
+              驼峰与下划线互转工具为您提供在线驼峰转下划线,下划线转驼峰,变量，类名,属性名,函数等命名的驼峰与下划线相互转换。
+            </p>
+          </div>
+          <div class="accordion-group"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {include file="script" /}
+  <script src="/static/script/hightout.js"></script>
+  <script type="text/javascript">
+    function demo() {
+      var demo_str = "order_id;\nauth_code;\ntotal_amount;";
+      $("#content").val(demo_str);
+    }
+  </script>
+  {include file="nav" /}
+  {include file="link" /}
+  {include file="footer" /}
+</body>
+
+</html>
